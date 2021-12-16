@@ -25,7 +25,7 @@
   (= "World" (subs "Hello World" 6 11))
 
   "How about joining together elements in a list?"
-  (= __ (string/join '(1 2 3)))
+  (= "123" (string/join '(1 2 3)))
 
   "What if you wanted to separate them out?"
   (= "1, 2, 3" (string/join ", " '(1 2 3)))
