@@ -18,7 +18,7 @@
   (= 0 (count '()))
 
   "The rest, when nothing is left, is empty"
-  (= [] (rest '(100)))
+  (= [] () (rest '(100)))
 
   "Construction by adding an element to the front is easy"
   (= [:a :b :c :d :e] (cons :a '(:b :c :d :e)))
@@ -39,7 +39,7 @@
             "No dice!")))
 
   "The rest of nothing isn't so strict"
-  (= () (try
-          (rest '())
-          (catch IllegalStateException e
-            "No dice!"))))
+  (= () [] (try
+             (rest '())
+             (catch IllegalStateException e
+               "No dice!"))))
