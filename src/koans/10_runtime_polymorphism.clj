@@ -10,8 +10,8 @@
                    "!")))
 
 (defmulti diet (fn [x] (:eater x)))
-(defmethod diet :herbivore [a] (str (get a :name) " eats veggies."))
-(defmethod diet :carnivore [a] (str (get a :name) " eats animals."))
+(defmethod diet :herbivore [a] (str (:name a) " eats veggies."))
+(defmethod diet :carnivore [a] (str (:name a) " eats animals."))
 (defmethod diet :default [a] "I don't know what Rich Hickey eats.")
 
 (meditations
