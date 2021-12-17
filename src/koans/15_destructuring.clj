@@ -44,4 +44,6 @@
 
   "All together now!"
   (= "Test Testerson, 123 Test Lane, Testerville, TX"
-     (#(str (first %1) " " (last %1) ", " (%2 :street-address) ", " (%2 :city) ", " (%2 :state))["Test" "Testerson"] test-address)))
+     (let [[first-name last-name] ["Test" "Testerson"] 
+           {:keys [street-address city :state]} test-address], 
+        (str first-name " " last-name ", " street-address ", " city ", " state))))

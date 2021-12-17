@@ -14,16 +14,16 @@
       (recur (dec n) (not acc)))))
 
 (defn recursive-reverse [coll]
-  (loop [coll coll
-         acc '()]
-  (if (= coll [])
-    acc
-    (recur (rest coll) (conj acc (first coll) )))))
+  (loop [[head & tail] coll
+          new-coll    '()]
+    (if-not head
+      new-coll
+      (recur tail (conj new-coll head)))))
 
 (defn factorial [n]
   (loop [number n
          acc 1]
-    (if (= number 0) 
+    (if (= number 1) 
       acc 
       (recur (dec number) (* acc number)))))
       
