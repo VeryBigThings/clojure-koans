@@ -1,5 +1,4 @@
-(ns problems.19-get-last
-  (:require [koan-engine.core :refer :all]))
+(ns problems.19-get-last)
 
 (defn get-last [n]
   (loop [[head & tail] n acc nil]
