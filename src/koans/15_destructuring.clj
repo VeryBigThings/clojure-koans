@@ -43,4 +43,4 @@
   (= "Test Testerson, 123 Test Lane, Testerville, TX"
      (let [[first-name last-name] ["Test", "Testerson"]
       {:keys [street-address city state]} test-address] 
-     (apply str (interpose ", " (list (str first-name " " last-name) street-address city state))))))
+     (apply str (interpose ", " [(str first-name " " last-name) street-address city state])))))
