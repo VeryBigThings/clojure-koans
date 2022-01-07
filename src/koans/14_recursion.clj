@@ -16,9 +16,9 @@
 (defn recursive-reverse [coll]
   (loop [coll coll
          acc '()]
-    (if (= [] coll)
-      acc
-      (recur (rest coll) (cons (first coll) acc)))))
+    (if (seq coll)
+      (recur (rest coll) (cons (first coll) acc))
+      acc)))
 
 (defn factorial [n]
   (loop [n n
