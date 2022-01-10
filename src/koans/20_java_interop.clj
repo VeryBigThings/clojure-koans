@@ -9,7 +9,7 @@
  (= "SELECT * FROM" (.toUpperCase "select * from"))
 
  "But instance method calls are very different from normal functions"
- (= ["SELECT" "FROM" "WHERE"] (map clojure.string/upper-case ["select" "from" "where"]))
+ (= ["SELECT" "FROM" "WHERE"] (map #(.toUpperCase %) ["select" "from" "where"]))
 
  "Constructing might be harder than breaking"
  (= 10 (let [latch (java.util.concurrent.CountDownLatch. 10)]
