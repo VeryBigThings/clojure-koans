@@ -25,28 +25,28 @@
  (= "World" (subs "Hello World" 6 11))
 
  "How about joining together elements in a list?"
- (= "123" (clojure.string/join '(1 2 3)))
+ (= "123" (string/join '(1 2 3)))
 
  "What if you wanted to separate them out?"
- (= "1, 2, 3" (clojure.string/join ", " '(1 2 3)))
+ (= "1, 2, 3" (string/join ", " '(1 2 3)))
 
  "Maybe you want to separate out all your lines"
- (= ["1" "2" "3"] (clojure.string/split-lines "1\n2\n3"))
+ (= ["1" "2" "3"] (string/split-lines "1\n2\n3"))
 
  "You may want to make sure your words are backwards"
- (= "olleh" (clojure.string/reverse "hello"))
+ (= "olleh" (string/reverse "hello"))
 
  "Maybe you want to find the index of the first occurrence of a substring"
- (= 0 (clojure.string/index-of "hello world" "h"))
+ (= 0 (string/index-of "hello world" "h"))
 
  "Or maybe the last index of the same"
- (= 13 (clojure.string/last-index-of "hello world, hello" "hello"))
+ (= 13 (string/last-index-of "hello world, hello" "hello"))
 
  "But when something doesn't exist, nothing is found"
- (= nil (clojure.string/index-of "hello world" "bob"))
+ (= nil (string/index-of "hello world" "bob"))
 
  "Sometimes you don't want whitespace cluttering the front and back"
- (= "hello world" (clojure.string/trim "  \nhello world \t \n"))
+ (= "hello world" (string/trim "  \nhello world \t \n"))
 
  "You can check if something is a char"
  (= true (char? \c))
@@ -61,10 +61,10 @@
  (= true (string? "string"))
 
  "Some strings may be blank"
- (= true (clojure.string/blank? ""))
+ (= true (string/blank? ""))
 
  "Even if at first glance they aren't"
- (= true (clojure.string/blank? " \n \t  "))
+ (= true (string/blank? " \n \t  "))
 
  "However, most strings aren't blank"
- (= false (clojure.string/blank? "hello?\nare you out there?")))
+ (= false (string/blank? "hello?\nare you out there?")))
